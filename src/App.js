@@ -10,6 +10,10 @@ function App() {
     setShowForm(true)
   }
 
+  const hidePopUp = () => {
+    setShowForm(false)
+  }
+
   return (
     <>
     <Navbar/>
