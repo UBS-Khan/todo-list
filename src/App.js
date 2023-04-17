@@ -5,23 +5,24 @@ import Navbar from './components/Navbar';
 
 function App() {
   const [showForm, setShowForm] = useState(false);
+  const [todos, setTodos] = useState([]);
 
   const formPopUp = () => {
-    setShowForm(true)
+    setShowForm(!showForm)
   }
 
-  const hidePopUp = () => {
-    setShowForm(false)
+  const addTodo = () => {
+    
   }
 
   return (
     <>
     <Navbar/>
     <div className='mainBody'>
-      <button className='btn' onClick={formPopUp}>+</button>
-      {showForm && <Form/>}
-      <div className='allTasks'>
-        <div className='task'></div>
+      <button className='btn' onClick={formPopUp}>Add Task +</button>
+      {showForm && <Form setShowForm={setShowForm}></Form>}
+      <div className='allTodos'>
+        <div className='todos'></div>
       </div>
     </div>
     </>
