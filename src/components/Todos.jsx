@@ -14,7 +14,9 @@ const Todos = ({lists}) => {
         {lists.map(list => (
             <div className='todo' onClick={showDesc}>
             <li key={list.id}>
-                <p>{list.title}</p>
+                <p>{list.title}</p> 
+                <button>delete</button>
+                <button>Complete</button>
             </li>
             </div>
         )

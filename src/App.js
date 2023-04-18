@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import Form from './components/Form';
 import Navbar from './components/Navbar';
+import Todos from './components/Todos.jsx'
 
 function App() {
   const [showForm, setShowForm] = useState(false);
@@ -11,8 +12,8 @@ function App() {
     setShowForm(!showForm)
   }
 
-  const addTodo = () => {
-    
+  const addTodo = (task) => {
+      setTodos([...todos,task])
   }
 
   return (
@@ -20,9 +21,11 @@ function App() {
     <Navbar/>
     <div className='mainBody'>
       <button className='btn' onClick={formPopUp}>Add Task +</button>
-      {showForm && <Form setShowForm={setShowForm}></Form>}
+      {showForm && <Form setShowForm={setShowForm} addTask={addTodo}></Form>}
       <div className='allTodos'>
-        <div className='todos'></div>
+        <div className='todos'>
+          <Todos lists={todos} ></Todos>
+        </div>
       </div>
     </div>
     </>
